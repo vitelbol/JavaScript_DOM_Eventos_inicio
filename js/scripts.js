@@ -77,11 +77,11 @@ formulario.addEventListener('submit',function(evento){
     const {nombre, email, mensaje} = datos;
     if(nombre === '' || email === '' || mensaje=== '')
     {
-        mostrarError('Todos los campos son obligatorios');
+        mostrarAlerta('Todos los campos son obligatorios',true);
         return; //corta la ejecucion del codigo
     }
     //crear la alerta de enviar correctamente
-    mostrarMensaje('Mensaje enviado correctamente');
+    mostrarAlerta('Mensaje enviado correctamente');
 
     //enviar el formulario
     console.log('Enviando Formulario');
@@ -97,28 +97,23 @@ function leerTexto(e)
     
     //console.log(datos);
 }
-//muestra una alerta de que se envio correctamente
-function mostrarMensaje(mensaje)
+
+//
+function mostrarAlerta(mensaje, error = null)
 {
     const alerta = document.createElement('P');
     alerta.textContent = mensaje;
-    alerta.classList.add('correcto');
+    if(error)
+    {
+        alerta.classList.add('error');
+    }
+    else
+    {
+        alerta.classList.add('correcto')
+    }
     formulario.appendChild(alerta);
+    //desaparesca despues de 5 segundos
     setTimeout(() =>{
         alerta.remove();
-    },5000);
-}
-
-//muestra un error en pantalla
-function mostrarError(mensaje)
-{
-    const error = document.createElement('P');
-    error.textContent = mensaje;
-    error.classList.add('error');
-    formulario.appendChild(error);
-
-    //desaparesca despues de 5 segundos
-    setTimeout(() => {
-        error.remove();
     },5000);
 }
