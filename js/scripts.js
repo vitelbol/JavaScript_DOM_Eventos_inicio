@@ -46,14 +46,16 @@ console.log(nuevoEnlace)
 
 //seleccionar elementos y asociarlos
 
-const btnEnviar = document.querySelector('.boton--primario');
-btnEnviar.addEventListener('click', function(evento)
-{
-    console.log(evento)
-    evento.preventDefault();
+//const btnEnviar = document.querySelector('.boton--primario');
+//btnEnviar.addEventListener('click', function(evento)
+//{
+//    console.log(evento)
+//    evento.preventDefault();
     //validar formulario
-    console.log('Enviando formulario');
-})
+//    console.log('Enviando formulario');
+//})
+
+
 //eventos de los inputs y textarea
 const datos = {
     nombre: '',
@@ -67,6 +69,16 @@ const mensaje = document.querySelector('#mensaje');
 nombre.addEventListener('input',leerTexto);
 email.addEventListener('input',leerTexto);
 mensaje.addEventListener('input',leerTexto);
+//el evento de submit 
+const formulario = document.querySelector('.formulario');
+formulario.addEventListener('submit',function(evento){
+    evento.preventDefault();
+    //validar el formulario
+
+    //enviar el formulario
+    //console.log('Enviando Formulario');
+})
+
 function leerTexto(e)
 {
     //console.log(e.target.value);
@@ -74,3 +86,4 @@ function leerTexto(e)
     
     console.log(datos);
 }
+
