@@ -43,3 +43,13 @@ console.log(5);
 function imprimir(){
     console.log(2);
 }
+
+//seleccionar elementos y asociarlos
+const btnEnviar = document.querySelector('.boton--primario');
+btnEnviar.addEventListener('click', function(evento)
+{
+    console.log(evento)
+    evento.preventDefault();
+    //validar formulario
+    console.log('Enviando formulario');
+})
