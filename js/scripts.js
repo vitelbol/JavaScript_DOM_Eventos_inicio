@@ -27,3 +27,19 @@ nuevoEnlace.classList.add('navegacion__enlace');
 const navegacion = document.querySelector('.navegacion');
 navegacion.appendChild(nuevoEnlace);
 console.log(nuevoEnlace)
+
+//eventos
+console.log(1);
+window.addEventListener('load', imprimir ); //load espera a que el js y los archivos que dependen del html esten listos
+window.onload = function(){
+    console.log(3);
+}
+document.addEventListener('DOMContentLoaded', function(){//solo espera el html, pero no espera el CSS o imagenes
+    console.log(4);
+})
+
+
+console.log(5);
+function imprimir(){
+    console.log(2);
+}
